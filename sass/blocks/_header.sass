@@ -1,0 +1,97 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  width: 100%
+  background-color: transparent
+  z-index: 100
+  padding: 56px 0 30px
+  transition: background .4s ease-in-out
+  &_theme_grey
+    background-color: $light-color
+  &__container
+    display: flex
+    align-items: center
+    justify-content: space-between
+    transition: all 0.7s ease-in-out
+  &__logo
+    width: 133px
+    height: 46px
+    opacity: 1
+    img
+      object-fit: contain
+  &__block-menu
+    display: flex
+    justify-content: space-between
+    column-gap: 60px
+  &__menu
+    display: flex
+    align-items: center
+    column-gap: 30px
+    a
+      color: $light-color
+      font-size: 20px
+      font-weight: 500
+    &_theme_grey 
+      a
+        color: $dark-color
+  &__item.active       
+    border-bottom: 2px solid rgb(186, 0, 1, 0.5)
+    border-radius: 2px
+  &__btn
+    @include adaptiv-font(20, 16)
+    font-weight: 500
+    color: $dark-color
+    background-color: $light-color
+    &:hover
+      color: $dark-color
+    &_theme_grey
+      color: $light-color
+      background-color: $dark-color
+      &:hover
+        color: $light-color
+  &__burger-btn
+    display: none
+    cursor: pointer
+    width: 40px
+    height: 40px
+    padding: 0
+    svg
+      width: 35px
+      height: 28px
+    &_theme_grey
+      svg path
+        stroke: $dark-color  
+@media screen and ( max-width: 1200px )
+  .header
+    padding: 40px 0 30px
+    &__block-menu
+      column-gap: 30px    
+    &__menu
+      column-gap: 20px
+      a
+        font-size: 17px
+    &__btn
+      padding: 12px 26px
+@media screen and ( max-width: 992px )
+  .header
+    padding: 30px 0 20px
+    &__block-menu
+      display: none
+    &__burger-btn
+      display: block  
+
+@media screen and ( max-width: 576px )
+  .header
+    padding: 18px 0 20px
+    &__logo
+      width: 101px
+      height: 33px
+    &__burger-btn
+      width: 35px
+      height: 35px
+      svg
+        width: 30px
+        height: 30px
+        

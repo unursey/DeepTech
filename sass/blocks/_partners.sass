@@ -1,0 +1,118 @@
+.partners
+  padding-bottom: 15px
+  &__slider
+    width: 100%
+    height: 100%
+    position: relative
+    margin: 0 auto
+    padding: 0 37px
+    overflow: hidden
+  &__list
+    height: 300px
+  &__item
+    width: 100%
+    display: flex
+    justify-content: center
+    height: fit-content
+  &__block-link
+    margin: 15px
+    border-radius: 10px
+    box-shadow: 0px 0px 30px rgba(76, 77, 77, 0.05)
+
+    
+  &__link_active &__text-block 
+    opacity: 1
+    transition: .4s
+
+  &__text-block
+    display: flex
+    flex-direction: column
+    gap: 15px
+    z-index: 100
+    color: $dark-color
+    text-align: left
+    height: 0
+    overflow: hidden
+    transition: height 0.4s
+    padding-top: 40px
+
+  &__title
+    @include adaptiv-font(16, 14)
+    font-weight: 800
+  &__text
+    @include adaptiv-font(16, 12)
+    font-weight: 400
+  &__link
+    height: auto
+    padding: 57px 40px 17px
+    filter: grayscale(1)
+    filter: grayscale(100%)
+    -webkit-filter: grayscale(100%) 
+    -webkit-filter: grayscale(1)  
+    opacity: 0.6
+    transition: .4s
+    cursor: pointer
+    &:hover
+      filter: grayscale(0)
+      filter: grayscale(0)
+      -webkit-filter: grayscale(0) 
+      -webkit-filter: grayscale(0)  
+      opacity: 1
+
+  &__link_active  
+    filter: grayscale(0)
+    filter: grayscale(0)
+    -webkit-filter: grayscale(0) 
+    -webkit-filter: grayscale(0)  
+    opacity: 1      
+  &__img
+    display: flex
+    align-items: center
+    align-self: center
+    max-width: 200px
+    height: 64px
+    img
+      max-height: 64px 
+      object-fit: contain   
+  &__prev, &__next
+    top: 29%
+  &__prev
+    left: 0
+  &__next
+    right: 0
+
+@media screen and ( max-width: 768px )
+  .partners
+    &__list
+      height: 290px
+    &__img
+      height: 56px  
+    &__link
+      padding: 47px 30px 22px
+    &__text-block
+      padding-top: 25px  
+ 
+@media screen and ( max-width: 576px )
+  .partners
+    &__slider
+      padding: 0 10px
+    &__list
+      height: 250px
+    &__img
+      height: 56px  
+    &__link
+      padding: 38px 35px 15px
+    &__text-block
+      padding-top: 23px
+      gap: 5px     
+
+@media screen and ( max-width: 420px )
+  .partners
+    &__list
+      height: 210px
+    &__img
+      height: 50px  
+    &__link
+      padding: 24px 24px 12px
+    &__text-block
+      padding-top: 12px      

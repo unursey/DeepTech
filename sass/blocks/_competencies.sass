@@ -1,0 +1,65 @@
+.competencies
+  &__text
+    @include adaptiv-font(20, 16)
+    max-width: 630px
+    font-weight: 500
+    margin-bottom: 90px
+  &__list
+    display: grid
+    grid-template-columns: repeat(3, calc(100% / 3 - 20px))
+    gap: 30px
+    margin-bottom: 85px
+  &__item
+    display: flex
+    flex-direction: column
+    justify-content: space-between  
+    gap: 82px
+    align-items: center
+    border-radius: 10px
+    box-shadow: 0px 0px 30px rgba(76, 77, 77, 0.05)
+    text-align: center
+    padding: 60px
+  &__img
+    align-self: center
+    align-items: flex-start
+    max-width: 150px
+    margin-bottom: 10px
+    img
+      object-fit: contain
+  &__btn
+    @include adaptiv-font(16, 12)
+    font-weight: 500
+  &__subtitle
+    @include adaptiv-font(25, 16)
+    font-weight: 800
+    min-height: 40px
+
+@media screen and ( max-width: 992px )
+  .competencies  
+    &__item
+      gap: 50px
+      padding: 20px
+    &__img
+      max-width: 100px  
+@media screen and ( max-width: 768px )
+  .competencies
+    &__list
+      grid-template-columns: repeat(2, 1fr)
+@media screen and ( max-width: 576px )
+  .competencies
+    &__text
+      margin-bottom: 30px
+    &__list
+      grid-template-columns: repeat(2, calc(50% - 9.5px))
+      gap: 19px
+      margin-bottom: 30px
+    &__item
+      gap: 25px
+      padding: 20px
+    &__img
+      align-self: center
+      max-width: 49px
+      img
+        object-fit: contain
+    &__btn-end
+      background-color: $mustard-color   

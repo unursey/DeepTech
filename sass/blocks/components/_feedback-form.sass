@@ -1,0 +1,114 @@
+.feedback-form
+  display: flex
+  flex-direction: column
+  gap: 60px    
+  box-shadow: 0px 0px 30px rgba(76, 77, 77, 0.05)
+  background: $light-color
+  color: $dark-color
+  border-radius: 10px
+  &__title
+    text-align: center
+    font-size: 30px
+    font-weight: 800
+  &__form
+    max-width: 400px
+    width: 100%
+    display: flex
+    flex-direction: column
+    margin: 0 auto
+    gap: 60px    
+  &__label   
+    font-weight: 500
+    position: relative
+  &__span 
+    position: absolute
+    width: 100%
+    bottom: 0
+    left: 0
+    border-bottom: solid 3px rgba(76, 77, 77, 0.3)
+    border-radius: 10px
+  &__input:focus + &__span,
+  &_active + &__span
+    border-bottom: solid 3px rgba(76, 77, 77, 1)
+  &__input, &__select
+    width: 100%
+    border: none
+    outline: none
+    padding: 15px 0
+    margin-top: 15px
+    font-size: 16px
+    font-weight: 400
+    &::placeholder
+      opacity: 0.3     
+  &__select  
+    -webkit-appearance: none
+    -moz-appearance: none
+    appearance: none
+  &__option  
+    font-size: 16px
+    font-weight: 400 
+  &__btn  
+    font-size: 20px
+    font-weight: 800
+    padding: 10px 45px
+    margin-bottom: 30px
+  &__block 
+    font-size: 16px
+    font-weight: 400
+    text-align: center
+  &__text
+    opacity: 0.3
+    margin-bottom: 5px
+  &__link
+    &:hover
+      color: $dark-color
+  &__btn-close
+    position: absolute
+    top: 50px
+    right: 50px
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 18px
+    height: 18px
+    padding: 0
+    background: transparent
+    border-style: none
+    outline: none
+    opacity: 0.3
+    svg path
+      stroke-width: 5
+
+@media screen and ( max-width: 992px )
+  .feedback-form
+    gap: 50px    
+    &__form  
+      gap: 40px
+    &__input, &__select
+      padding: 10px 0
+      margin-top: 10px       
+    &__btn-close
+      top: 40px
+      right: 30px
+   
+@media screen and ( max-width: 576px )
+  .feedback-form  
+    &__form  
+      max-width: 275px 
+      gap: 40px    
+    &__input:focus + &__span
+        border-bottom: solid 2px rgba(76, 77, 77, 1)  
+    &__input, &__select
+      padding: 10px 0
+      margin-top: 10px    
+    &__btn  
+      font-size: 16px
+      padding: 10px 89px
+      margin-bottom: 50px
+    &__block 
+      font-size: 14px
+    &__btn-close
+      top: 30px
+      right: 20px     
+      svg path
+        stroke-width: 3

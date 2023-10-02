@@ -1,0 +1,151 @@
+.project
+  &__title
+    margin-bottom: 80px
+  &__block
+    display: grid
+    grid-template-columns: 45% 50%
+    justify-content: space-between
+    gap: 30px
+  &__section:not(:last-child)
+    margin-bottom: 20px
+  &__text-block
+    max-width: 520px  
+  &__text-block-mob
+    display: none  
+  &__text
+    font-weight: 400
+  &__subtitle
+    @include adaptiv-font(20, 16)
+    font-weight: 800
+    margin-bottom: 20px
+  &__content
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    gap: 30px
+  &__slider-content
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    gap: 15px
+    text-align: center  
+  &__sliders
+    position: relative
+    max-width: 630px
+    max-height: 500px
+  &__swiper
+    width: 100%
+    height: 100%
+  &__swiper-gallery
+    height: 28%
+    box-sizing: border-box
+    padding: 30px 0 0
+    margin-bottom: 15px
+  &__swiper-gallery2
+    position: relative
+    height: 72%
+    width: 100%        
+  &__img-block
+    width: 100%
+    height: 100%
+    border-radius: 10px
+    overflow: hidden  
+  &__img
+    width: 100%
+    height: 100%
+    object-fit: cover
+  &__swiper-gallery &__item
+    width: 25%
+    height: 100%
+    opacity: 0.4
+    margin-right: 30px
+  &__swiper-gallery .swiper-slide-thumb-active
+    opacity: 1
+  &__slider-text 
+    @include adaptiv-font(16, 12)
+    font-weight: 400
+    opacity: 0.8
+    max-width: 630px
+    text-align: center
+  &__next
+    right: 30px
+  &__prev
+    left: 30px
+  &__next, &__prev
+    top: calc(50% - 10px)  
+  &__cart
+    width: 100%
+    box-shadow: 0px 0px 30px rgba(76, 77, 77, 0.05)
+    border-radius: 10px
+    padding: 60px    
+  &__cart-title
+    @include adaptiv-font(25, 20) 
+    margin-bottom: 20px
+  &__cart-text
+    @include adaptiv-font(20, 14)
+    font-weight: 500
+    line-height: 33px
+  &__btn-title
+    @include adaptiv-font(30, 20)  
+    font-weight: 800
+    color: $green-color
+    margin-bottom: 30px
+  &__cart-btn
+    @include adaptiv-font(16, 12) 
+    font-weight: 800
+
+@media screen and ( max-width: 1200px )
+  .project
+    &__block  
+      grid-template-columns: repeat(2, calc(50% - 15px))
+
+@media screen and ( max-width: 992px )
+  .project
+    &__block  
+      grid-template-columns: 100%
+    &__text-block
+      max-width: 100%   
+    &__sliders
+      max-width: 100%  
+ 
+@media screen and ( max-width: 576px )
+  .project
+    &__title
+      margin-bottom: 50px
+    &__text-block
+      display: none
+    &__subtitle
+      margin-bottom: 10px
+      &:nth-child(2)       
+        margin-bottom: 18px
+    &__text-block-mob
+      display: block
+    &__cart
+      padding: 30px
+    &__cart-text
+      line-height: 24px
+    &__sliders
+      height: 100%      
+    &__swiper-gallery
+      display: none
+    &__swiper-gallery2
+      height: 100%
+    &__cart-title
+      margin-bottom: 30px
+    &__btn-title
+      margin-bottom: 20px               
+    &__cart-btn
+      font-weight: 500
+    &__next
+      right: 15px
+    &__prev
+      left: 15px
+
+@media screen and ( max-width: 420px )
+  .project
+    &__swiper-gallery2
+      height: 190px
+    &__content
+      gap: 18px   
+    &__slider-content
+      gap: 10px    

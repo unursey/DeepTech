@@ -1,0 +1,116 @@
+.projects
+  position: relative
+  display: grid
+  gap: 30px
+  grid-template-columns: repeat(3, 1fr)
+  grid-auto-rows: 530px
+  overflow: hidden
+  margin-bottom: 80px
+  &__swiper
+    width: 100%
+    height: 100%  
+  &__list
+    position: relative
+  &__item
+    position: relative
+    border-radius: 10px
+    overflow: hidden
+    &::after
+      position: absolute
+      content: ''
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-image: linear-gradient(180deg, rgba(76, 77, 77, 0.8) 0%, rgba(76, 77, 77, 0) 100%)
+      border-radius: 10px
+      z-index: 0
+  &__img
+    width: 100%
+    height: 100%
+    object-fit: cover
+  &__block
+    position: absolute
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    color: $light-color
+    padding: 62px 60px 58px
+    z-index: 10
+  &__block-text
+    max-height: 330px
+    overflow-y: hidden
+    margin-bottom: 10px
+    &::-webkit-scrollbar
+      display: none
+  &__subtitle
+    @include adaptiv-font(25, 16)
+    font-weight: 800
+    margin-bottom: 15px
+  &__text
+    @include adaptiv-font(16, 12)
+    font-weight: 400
+    &:not(:last-child)
+      margin-bottom: 19px
+  &__btn
+    @include adaptiv-font(16, 12)
+    font-weight: 500
+    color: $dark-color
+    background: $light-color
+    &:hover
+      color: $dark-color
+  &__prev, &__next
+    bottom: 70px    
+  &__prev
+    left: 30px
+  &__next
+    right: 30px
+@media screen and ( max-width: 1200px )      
+  .projects
+    grid-auto-rows: 430px
+    &__block
+      padding: 40px
+    &__block-text
+      max-height: 290px      
+    &__prev, &__next
+      bottom: 48px
+
+@media screen and ( max-width: 992px )    
+  .projects    
+    grid-template-columns: repeat(2, 1fr)      
+
+@media screen and ( max-width: 768px )
+  .projects
+    grid-auto-rows: 350px 
+    &__block
+      padding: 20px
+    &__prev, &__next
+      bottom: 32px
+    &__prev
+      left: 18px
+    &__next    
+      right: 18px
+
+@media screen and ( max-width: 576px )
+  .projects
+    gap: 19px
+    grid-auto-rows: 290px
+    margin-bottom: 30px
+    &__block
+      padding: 20px
+    &__subtitle
+      margin-bottom: 9px
+    &__text
+      opacity: 0.8
+      &:not(:last-child)
+        margin-bottom: 14px
+    &__prev, &__next
+      display: none
+
+@media screen and ( max-width: 420px )
+  .projects
+    grid-auto-rows: 218px        

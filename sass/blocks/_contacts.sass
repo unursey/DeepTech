@@ -1,0 +1,86 @@
+.contacts
+  &__container
+    display: grid
+    grid-template-columns: 57% 40%
+    justify-content: space-between
+    gap: 30px
+  &__list
+    display: flex
+    flex-direction: column
+    gap: 30px
+  &__item
+    box-shadow: 0px 0px 30px rgba(76, 77, 77, 0.05)
+    border-radius: 10px
+    padding: 60px
+  &__subtitle
+    @include adaptiv-font(25, 20)
+    font-weight: 800
+    margin-bottom: 58px
+  &__address
+    a
+      font-size: 16px
+      font-weight: 400
+      padding-left: 37px
+  &__phone-block
+    display: flex
+    flex-direction: column
+    gap: 17px
+    margin-bottom: 30px
+  &__phone, &__mail  
+    position: relative
+    &::before
+      position: absolute
+      content: ''
+      top: 0
+      left: 0
+      width: 20px
+      height: 20px
+      background-repeat: no-repeat
+      background-size: contain
+  &__phone
+    &::before
+      background-image: url(../img/contacts/phone.svg)          
+  &__mail
+    &::before
+      background-image: url(../img/contacts/mail.svg)
+  &__feedback
+    align-self: start
+    padding: 90px 60px
+  &__form-title
+    color: $blue-color
+
+@media screen and ( max-width: 1200px )
+  .contacts
+    &__container
+      grid-template-columns: 1fr 1fr
+    &__subtitle
+      margin-bottom: 40px      
+    &__item
+      padding: 40px      
+    &__feedback
+      padding: 90px 40px
+    &__phone-block
+      gap: 15px
+      margin-bottom: 20px
+
+@media screen and ( max-width: 992px )
+  .contacts
+    &__container
+      grid-template-columns: 1fr
+      gap: 50px
+
+@media screen and ( max-width: 576px )
+  .contacts
+    &__list
+      gap: 19px
+    &__item
+      padding: 30px
+    &__address
+      a
+        padding-left: 25px
+    &__phone, &__mail  
+      &::before
+        width: 15px
+        height: 15px
+    &__feedback
+      padding: 50px 30px    

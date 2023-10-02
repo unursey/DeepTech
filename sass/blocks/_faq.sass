@@ -1,0 +1,92 @@
+.faq
+  &__container
+    display: grid
+    grid-template-columns: 57% 40%
+    justify-content: space-between
+    gap: 30px
+  &__list
+    display: flex
+    flex-direction: column
+    gap: 30px
+  &__item
+    box-shadow: 0px 0px 30px rgba(76, 77, 77, 0.05)
+    border-radius: 10px
+  &__btn
+    position: relative
+    width: 100%
+    text-align: left
+    @include adaptiv-font(20, 16)
+    font-weight: 500
+    color:$dark-color
+    border: none
+    padding: 60px 150px 60px 60px
+    &:after
+      position: absolute
+      content: url('../img/faq/btn.svg')
+      top: calc(50% - 14.5px)
+      right: 60px
+      width: 29px
+      height: 29px
+      transition: .4s
+      opacity: 0.3
+    &:hover
+      &::after
+        opacity: 1  
+  &__item_active &__btn:after
+    transform: rotate(-45deg)
+    transform-origin: center
+    opacity: 1
+  &__item_active &__text-wrapper 
+    height: auto
+  &__text-wrapper
+    height: 0
+    overflow: hidden
+    transition: height .4s ease-in-out   
+  &__text
+    @include adaptiv-font(16, 14)
+    font-weight: 400
+    padding: 0 150px 60px 60px
+    p
+      &:not(:last-child)
+        margin-bottom: 19px
+  &__feedback
+    align-self: start
+    padding: 90px 60px        
+  &__form-title
+    color: $blue-color
+
+@media screen and ( max-width: 1200px )
+  .faq
+    &__container
+      grid-template-columns: 1fr 1fr    
+    &__btn
+      padding: 30px 85px 30px 30px
+    &__text
+      padding: 0 85px 30px 30px     
+    &__feedback
+      padding: 90px 40px
+
+@media screen and ( max-width: 992px )
+  .faq
+    &__container
+      grid-template-columns: 1fr
+      gap: 50px
+
+@media screen and ( max-width: 576px )
+  .faq
+    &__list
+      gap: 19px
+    &__btn
+      &:after
+        top: calc(50% - 12.5px)
+        right: 36px
+        width: 25px
+        height: 25px
+        opacity: 1     
+    &__text
+      p
+        &:not(:last-child)
+          margin-bottom: 0
+    &__feedback
+      padding: 50px 30px       
+
